@@ -1,0 +1,5 @@
+Collecting confluent_kafka
+  Downloading confluent_kafka-2.3.0-cp310-cp310-win_amd64.whl (3.4 MB)
+     ---------------------------------------- 3.4/3.4 MB 2.8 MB/s eta 0:00:00
+Installing collected packages: confluent_kafka
+Successfully installed confluent_kafka-2.3.0

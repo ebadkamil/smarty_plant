@@ -25,7 +25,7 @@ def get_update_pipeline_tab():
                                     }
                                     for order_type in OrderType
                                 ],
-                                value=1,
+                                value=OrderType.TYPE_A.value,
                                 className="rightbox",
                             ),
                             html.Label("Pipeline Number: ", className="leftbox"),
@@ -38,6 +38,7 @@ def get_update_pipeline_tab():
                             html.Label("Order Number: ", className="leftbox"),
                             dcc.Input(
                                 id="ord-nbr",
+                                value=1,
                                 type="number",
                                 className="rightbox",
                             ),

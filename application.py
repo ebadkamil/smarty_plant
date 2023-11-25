@@ -11,7 +11,11 @@
 from smarty_plant.webgui.app import DashApp
 
 
-
 app = DashApp()
 
-app._app.run_server(debug=False)
+try:
+    app._app.run_server(debug=False)
+except KeyboardInterrupt:
+    print(f"Interrupted by user: Closing consumers ...")
+finally:
+    app.stop()
