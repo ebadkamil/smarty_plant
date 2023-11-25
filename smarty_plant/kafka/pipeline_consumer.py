@@ -1,8 +1,8 @@
+import json
 import time
 import uuid
 from threading import Thread
 from typing import Dict, List
-import json
 
 from confluent_kafka import Consumer  # type: ignore
 
@@ -14,9 +14,7 @@ class PipelineConsumer:
 
         self._stop = False
 
-        self._message_buffer: Dict[str, Dict] = {
-            topic: {} for topic in self._topics
-        }
+        self._message_buffer: Dict[str, Dict] = {topic: {} for topic in self._topics}
 
         self._consumers = {}
         self._consumer_threads = {}

@@ -3,8 +3,6 @@ from dash import dash_table, dcc, html
 
 from smarty_plant.webgui.constants import OrderType, PipelineMode
 
-colors_map = ["jet", "Reds", "Viridis", "gray"]
-
 
 def get_update_pipeline_tab():
     return html.Div(
@@ -31,8 +29,6 @@ def get_update_pipeline_tab():
                             html.Label("Pipeline Number: ", className="leftbox"),
                             dcc.Dropdown(
                                 id="pipe-nbr",
-                                options=[{"label": i, "value": i} for i in range(100)],
-                                value=1,
                                 className="rightbox",
                             ),
                             html.Label("Order Number: ", className="leftbox"),
@@ -80,23 +76,7 @@ def get_overview_tab():
         className="control-tab",
         children=[
             html.Br(),
-            html.Div(
-                [
-                    html.Div(
-                        dash_table.DataTable(
-                            id="device-table",
-                            columns=[
-                                {"name": "Production Pipeline", "id": "pipe_number"},
-                                {"name": "Status", "id": "status"},
-                            ],
-                            style_table={"overflowX": "auto"},
-                        ),
-                        className="pretty_container one-third column",
-                    ),
-                    html.Div(dcc.Graph(id="histogram"), className="two-thirds column"),
-                ],
-                className="row",
-            )
+            html.Div(dcc.Graph(id="histogram")),
         ],
     )
 
