@@ -1,5 +1,5 @@
 import dash_daq as daq
-from dash import dash_table, dcc, html
+from dash import dcc, html
 
 from smarty_plant.webgui.constants import OrderType, PipelineMode
 
@@ -91,32 +91,9 @@ def get_layout(UPDATE_INT=1.0):
                         interval=UPDATE_INT * 1000,
                         n_intervals=0,
                     ),
-                    # dcc.Interval(
-                    #     id="psutil_component", interval=2 * 1000, n_intervals=0
-                    # ),
                 ],
                 style=dict(textAlign="center"),
             ),
-            # html.Div(
-            #     [
-            #         daq.Gauge(
-            #             id="virtual_memory",
-            #             min=0,
-            #             value=0,
-            #             size=150,
-            #             className="leftbox",
-            #             style=dict(textAlign="center"),
-            #         ),
-            #         daq.Gauge(
-            #             id="swap_memory",
-            #             min=0,
-            #             value=0,
-            #             size=150,
-            #             className="rightbox",
-            #             style=dict(textAlign="center"),
-            #         ),
-            #     ]
-            # ),
             daq.LEDDisplay(
                 id="timestamp",
                 value="1000",
