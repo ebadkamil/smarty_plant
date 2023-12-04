@@ -19,3 +19,36 @@ class OrderData:
 
     def as_dict(self):
         return {"id": self._id, "pipeline": self._pipeline.as_dict()}
+
+
+# {
+#   "ProductTypeID": 1,
+#   "TypeName": "TypeA"
+# }
+
+# {
+#   "LineID": 1,
+#   "LineNumber": "PL001",
+#   "Status": "Green",
+#   "LastUpdateTimestamp": "2023-11-26T12:00:00Z",
+#   "ProductType": {
+#     "ProductTypeID": 1,
+#     "TypeName": "TypeA"
+#   }
+# }
+
+# {
+#   "OrderID": 101,
+#   "OrderNumber": "ORD001",
+#   "ProductType": {
+#     "ProductTypeID": 1,
+#     "TypeName": "TypeA"
+#   }
+# }
+
+# {
+#   "MappingID": 201,
+#   "LineID": 1,
+#   "OrderID": 101
+# }
+#
